@@ -1,0 +1,37 @@
+.root {
+  border: 1px solid var(--lightgray);
+  display: flex;
+  align-items: center;
+  border-radius: 240px;
+  overflow: hidden;
+  transition: all 0.2 ease-in-out;
+  padding: 0 16px;
+  width: 100%;
+  max-width: 320px;
+  height: 40px;
+}
+
+.root:hover,
+.root:focus-within,
+.root.has-value,
+input:focus + .root,
+input:valid + .root {
+  border: 1px solid var(--gray);
+}
+
+.root input {
+  margin-left: 8px;
+  height: 100%;
+  width: 100%;
+  color: var(--black);
+  font-size: 14px;
+}
+
+.root input::placeholder {
+  color: var(--gray);
+}
+
+.icon {
+  padding: 8px 0;
+  display: flex;
+}
