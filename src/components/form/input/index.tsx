@@ -1,6 +1,6 @@
 import { FC, memo, useCallback } from "react";
 import styles from "./input.module.css";
-import { HTMLInputProps, InputProps } from "./types";
+import { HTMLInputProps, InputProps, HTMLTextAreaProps } from "./types";
 
 const Input: FC<InputProps> = (props) => {
   const { multiline, ...otherProps } = props;
@@ -9,7 +9,7 @@ const Input: FC<InputProps> = (props) => {
     if (multiline)
       return (
         <textarea
-          {...("rows" in otherProps ? otherProps : {})}
+          {...(otherProps as HTMLTextAreaProps)}
           className={styles.root}
         />
       );

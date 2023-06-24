@@ -1,8 +1,14 @@
-export default function Favorite() {
+export default function Favorite({
+  height,
+  width,
+}: {
+  width?: string;
+  height?: string;
+}) {
   return (
     <svg
-      width="14"
-      height="12"
+      width={width || "14"}
+      height={height || "12"}
       viewBox="0 0 14 12"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

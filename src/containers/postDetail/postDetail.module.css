@@ -1,80 +1,60 @@
 .root {
-  border: 1px solid #e7e7e7;
-  border-radius: 4px;
-  height: 400px;
-  padding: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: all 0.2s ease-out;
-  cursor: pointer;
+  max-width: 700px;
+  margin: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
-.root:hover {
+.imageContainer:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
 
 .imageContainer {
   width: 100%;
   background: #c4c4c4;
-  height: 125px;
+  height: 400px;
   position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: all 0.2s ease-out;
 }
 
 .imageContainer img {
   object-fit: cover;
 }
 
-.content {
-  padding: 0 4px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
-}
-
 .title {
-  margin: 10px 0;
-  font-size: 18px;
+  margin-bottom: 16px;
+  font-size: 36px;
   font-weight: 700;
-  line-height: 21px;
+  line-height: 40px;
   text-align: left;
   color: #000000;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .description {
-  margin: 10px 0;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  color: #9d9d9d;
-  max-height: 215px;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 18px;
+  color: var(--black);
   text-align: justify;
-}
-
-.description strong {
-  color: black;
-  font-weight: 700;
+  line-height: 32px;
 }
 
 .tags {
   display: flex;
+  align-items: center;
+  gap: 8px;
   margin: 10px 0;
   width: 100%;
   height: 48px;
   flex-wrap: wrap;
   overflow: auto;
+  color: var(--gray);
 }
 
 .tags div {
@@ -83,20 +63,22 @@
 
 .moreData {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   padding: 8px 0;
 }
 
 .user {
   display: flex;
   align-items: center;
+  margin-bottom: 4px;
+  gap: 16px;
+  color: var(--gray);
 }
 
 .user img {
-  width: 28px;
-  height: 28px;
-  border-radius: 50px;
+  width: 36px;
+  height: 36px;
+  border-radius: 500px;
   background: #c4c4c4;
 }
 
@@ -105,32 +87,50 @@
 }
 
 .userName {
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 500;
-  line-height: 12px;
+  line-height: 14px;
   letter-spacing: 0em;
   text-align: left;
   margin-bottom: 4px;
-  color: #2d2d2d;
+  color: var(--black);
+  display: flex;
 }
 
 .date {
   font-style: normal;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 14px;
   line-height: 12px;
   color: #9d9d9d;
+  margin: 10px 0;
 }
 
 .likes {
   display: flex;
+  align-items: center;
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 18px;
   line-height: 14px;
-  color: #9d9d9d;
+  color: var(--gray);
 }
 
 .likeIcon {
   margin-left: 5px;
+}
+
+.spacer {
+  width: 100%;
+  height: 1px;
+  background: var(--gray);
+  margin: 10px 0;
+}
+
+@media (min-width: 768px) {
+  .moreData {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

@@ -22,9 +22,18 @@ export const fetchPosts = async (
   }
 };
 
+export const fetchPostDetail = async (id: string | number): Promise<Post> => {
+  try {
+    const response = await axios.get(ApiUrls.posts(id));
+    return response.data;
+  } catch (error: any) {
+    throw new Error(error?.message || "Failed to fetch post");
+  }
+};
+
 export async function createPost(postData: Partial<Post>) {
   try {
-    const response = await axios.post(ApiUrls.createPost, postData);
+    const response = await axios.post(ApiUrls.posts(), postData);
     return response.data;
   } catch (error: any) {
     throw new Error(error?.message || "Failed to add post");

@@ -6,6 +6,8 @@ import Tag from "../tag";
 import CustomImage from "../customImage";
 import HighlightedText from "../highlightedText";
 import Image from "next/image";
+import { standardDate } from "@/utils/date";
+import { useRouter } from "next/navigation";
 
 interface PostCardProps {
   data: Post;
@@ -13,25 +15,20 @@ interface PostCardProps {
 }
 
 function PostCard({ data, highlightedWord }: PostCardProps) {
-  const { image, likes, publishDate, tags, text, title, user } = data || {};
+  const { id, image, likes, publishDate, tags, text, title, user } = data || {};
+
+  const router = useRouter();
+
   const {
     avatar: userAvatar,
     firstName: userFirstName,
     lastName: userLastName,
   } = user || {};
 
-  const date = useMemo(() => {
-    const dateObj = new Date(publishDate);
-    const formattedDate = dateObj.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    });
-    return formattedDate;
-  }, [publishDate]);
+  const date = useMemo(() => standardDate(publishDate), [publishDate]);
 
   return (
-    <div className={styles.root}>
+    <div className={styles.root} onClick={() => router.push(`/${id}`)}>
       <div className={styles.imageContainer}>
         <Image
           src={image}
@@ -73,7 +70,7 @@ function PostCard({ data, highlightedWord }: PostCardProps) {
             </div>
           </div>
           <div className={styles.likes}>
-            {likes}
+            {likes || 0}
             <div className={styles.likeIcon}>
               <Favorite />
             </div>

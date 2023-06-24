@@ -38,11 +38,17 @@ export default function AddPostForm({
         <AddPostHeader loading={loading} />
         <div className={styles.inputContainer}>
           <label>Title</label>
-          <Input name="title" type="text" required autoFocus />
+          <Input name="title" id="title" type="text" required autoFocus />
         </div>
         <div className={styles.inputContainer}>
           <label>Description</label>
-          <Input name="description" type="text" multiline required />
+          <Input
+            name="description"
+            id="description"
+            type="text"
+            multiline
+            required
+          />
         </div>
         <div className={styles.inputContainer}>
           <label>Tags</label>
