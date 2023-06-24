@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.root button {
+  position: absolute;
+  right: 16px;
+  gap: 4px;
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.root button:disabled,
+.root button[disabled] {
+  color: var(--lightgray);
+}

@@ -1,4 +1,4 @@
-import { fetchPosts } from "@/api/fetchPosts";
+import { fetchPosts } from "@/api/posts";
 import BlogPosts from "@/containers/blogPosts";
 
 export default async function Page() {

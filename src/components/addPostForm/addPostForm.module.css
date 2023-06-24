@@ -1,0 +1,36 @@
+.root form {
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.inputContainer {
+  width: 100%;
+  gap: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputContainer label,
+.inputContainer input {
+  display: block;
+}
+
+.inputContainer label {
+  color: var(--black);
+  font-size: 12px;
+  font-weight: 500;
+  padding-left: 8px;
+}
+
+.inputContainer textarea {
+  min-height: 120px;
+}
+
+.tags {
+  display: flex;
+  gap: 12px 8px;
+  flex-wrap: nowrap;
+  margin-top: 12px;
+}

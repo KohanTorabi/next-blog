@@ -30,17 +30,6 @@ function PostCard({ data, highlightedWord }: PostCardProps) {
     return formattedDate;
   }, [publishDate]);
 
-  const descriptionWithBoldWord = useMemo(() => {
-    const words: any = text.split(" ");
-    const boldIndex = words.findIndex(
-      (word: string) => word === highlightedWord
-    );
-    if (boldIndex !== -1) {
-      words[boldIndex] = <strong>{words[boldIndex]}</strong>;
-    }
-    return words.join(" ");
-  }, [text, highlightedWord]);
-
   return (
     <div className={styles.root}>
       <div className={styles.imageContainer}>

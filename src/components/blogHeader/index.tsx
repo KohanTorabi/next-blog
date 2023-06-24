@@ -1,3 +1,4 @@
+import { useRouter } from "next/navigation";
 import AddCircleFilled from "../icons/addCircleFilled";
 import PrimaryButton from "../primaryButton";
 import SearchPost from "../search";
@@ -9,10 +10,16 @@ interface BlogHeaderProps {
 }
 
 function BlogHeader({ searchValue, search }: BlogHeaderProps) {
+  const router = useRouter();
   return (
     <div className={styles.root}>
       <SearchPost search={search} onSubmit={searchValue} />
-      <PrimaryButton icon={<AddCircleFilled />}>Add new post</PrimaryButton>
+      <PrimaryButton
+        icon={<AddCircleFilled />}
+        onClick={() => router.push("/add-post")}
+      >
+        Add new post
+      </PrimaryButton>
     </div>
   );
 }

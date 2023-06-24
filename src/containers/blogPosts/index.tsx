@@ -5,7 +5,7 @@ import styles from "./blogPosts.module.css";
 import PostCard from "@/components/postCard";
 import { useMemo, useState } from "react";
 import BlogHeader from "@/components/blogHeader";
-import { fetchPosts } from "@/api/fetchPosts";
+import { fetchPosts } from "@/api/posts";
 import PrimaryButton from "@/components/primaryButton";
 import { PAGINATION_LIMIT } from "@/constants/api";
 import ErrorMessage from "@/components/errorMessage";
